@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD</title>
+       
+        <link rel="stylesheet" href="./css/style.css">
+       
+    </head>
+    <body>
+        <h1>Student Registration</h1>
+        <form>
+            <input name='name' type="text" placeholder="enter your name"/>
+            <input name="surname" type="text" placeholder="enter your surname"/>
+            <input name="adress" type="text" placeholder="enter your adress"/>
+            <input type="button" value="save" onclick="stinfo()"/>
+        </form>
+        <hr>
+        <h1>Students Table</h1>
+        <table border="1" id="stbl">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>anjali</td>
+                    <td>rathor</td>
+                    <td>manasa</td>
+                    <td>
+                        <button>view</button>
+                        <button>edit</button>
+                        <button>delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
