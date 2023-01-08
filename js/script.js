@@ -12,17 +12,20 @@ let stinfo = ()=>{
     //console.log(stname.value);
     //console.log(surname.value);
     //console.log(addr.value);
-    table.innerHTML += `<tr>
-                            <td>${stname.value}</td>
-                            <td>${surname.value}</td>
-                            <td>${addr.value}</td>
-                            <td>
-                                <button onclick="readdata(this)">view</button>
-                                <button >edit</button>
-                                <button onclick="dltdata(this)">delete</button>
-                            </td>
-                        </tr>`
-    stname.value = surname.value = addr.value = '';
+    let savedata = confirm('do you want to save this information');
+    if(savedata){
+                table.innerHTML += `<tr>
+                                    <td>${stname.value}</td>
+                                    <td>${surname.value}</td>
+                                    <td>${addr.value}</td>
+                                    <td>
+                                        <button class="btn btn-success"onclick="readdata(this)">view</button>
+                                        <button class="btn btn-primary" onclick="edit(this)">edit</button>
+                                        <button class="btn btn-danger" onclick="dltdata(this)">delete</button>
+                                    </td>
+                                </tr>`
+                stname.value = surname.value = addr.value = '';
+            }
     }
             
 let dltdata = (st)=>{
@@ -35,4 +38,5 @@ let dltdata = (st)=>{
         st.closest('tr').remove();
         }
     }
+    
                 
