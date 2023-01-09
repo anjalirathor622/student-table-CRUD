@@ -11,12 +11,37 @@
     </head>
     <body>
         <h1>Student Registration</h1>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="myul">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+            
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary closemodal" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
         <form>
-            <input name='name' type="text" placeholder="enter your name"/>
-            <input name="surname" type="text" placeholder="enter your surname"/>
-            <input name="adress" type="text" placeholder="enter your adress"/>
-            <input type="button" value="save" onclick="stinfo()"/>
+            <input class="form-control" name='name' type="text" placeholder="enter your name"/>
+            <input class="form-control" name="surname" type="text" placeholder="enter your surname"/>
+            <input class="form-control" name="adress" type="text" placeholder="enter your adress"/>
+            <br>
+            <div class="myError"></div>
+            <input type="button" class="btn btn-primary" value="save" onclick="stinfo()"/>
         </form>
+        
         <hr>
         <h1>Students Table</h1>
         <table border="1" id="stbl" class="table table-secondary table-striped table-bordered table-hover">
@@ -34,8 +59,8 @@
                     <td>rathor</td>
                     <td>manasa</td>
                     <td>
-                        <button class="btn btn-success">view</button>
-                        <button class="btn btn-primary">edit</button>
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="readdata(this)">view</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="editdata(this)">edit</button>
                         <button class="btn btn-danger">delete</button>
                     </td>
                 </tr>
